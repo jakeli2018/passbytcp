@@ -237,7 +237,7 @@ class SocketBridge:
             # if both two connection pair was rd-shutdowned,
             #   this pair sockets are regarded to be completed
             #   so we gonna close them
-            self._terminate(conn)
+            self._tterminate(conn)
 
     def _wr_shutdown(self, conn, once=False):
         """action when connection should be write-shutdown
@@ -253,7 +253,7 @@ class SocketBridge:
             # if a socket is wr_shutdowned, then it's
             self._rd_shutdown(self.map[conn], True)
 
-    def _terminate(self, conn):
+    def _tterminate(self, conn):
         """terminate a sockets pair (two socket)
         :type conn: socket.SocketType
         :param conn: any one of the sockets pair
